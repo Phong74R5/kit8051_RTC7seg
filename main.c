@@ -16,32 +16,32 @@ unsigned char Time[6] = {0x10, 0x16, 0x23, 0x24, 0x10, 0x01};
 
 // RTC Register Map (Dia chi, Doc/Ghi, Bit, Pham vi)
 
-// 81h-80h: Giay (00�59)
-// Bit 7: CH (Clock Halt), Bit 6: 10s, Bits 5�0: Giay
+// 81h-80h: Giay (00-59)
+// Bit 7: CH (Clock Halt), Bit 6: 10s, Bits 5-0: Giay
 
-// 83h-82h: Phut (00�59)
-// Bit 6: 10m, Bits 5�0: Phut
+// 83h-82h: Phut (00-59)
+// Bit 6: 10m, Bits 5-0: Phut
 
-// 85h-84h: Gio (1�12/0�23)
-// Bit 7: 12/24, Bit 6: AM/PM, Bit 5: 10h, Bits 4�0: Gio
+// 85h-84h: Gio (1-12/0-23)
+// Bit 7: 12/24, Bit 6: AM/PM, Bit 5: 10h, Bits 4-0: Gio
 
-// 87h-86h: Ngay (1�31)
-// Bit 5: 10d, Bits 4�0: Ngay
+// 87h-86h: Ngay (1-31)
+// Bit 5: 10d, Bits 4-0: Ngay
 
-// 89h-88h: Thang (1�12)
-// Bit 4: 10m, Bits 3�0: Thang
+// 89h-88h: Thang (1-12)
+// Bit 4: 10m, Bits 3-0: Thang
 
-// 8Bh-8Ah: Thu (1�7)
-// Bits 2�0: Thu
+// 8Bh-8Ah: Thu (1-7)
+// Bits 2-0: Thu
 
-// 8Dh-8Ch: Nam (00�99)
-// Bit 7: 10y, Bits 6�0: Nam
+// 8Dh-8Ch: Nam (00-99)
+// Bit 7: 10y, Bits 6-0: Nam
 
 // 8Fh-8Eh: Thanh ghi trang thai
 // Bit 7: WP (Write Protect)
 
 // 91h-90h: Thanh ghi dieu khien
-// Bits 7�4: TCS, Bits 3�2: DS, Bits 1�0: RS
+// Bits 7-4: TCS, Bits 3-2: DS, Bits 1-0: RS
 
 
 unsigned char READ[6] = {0x81,0x83,0x85,0x8D,0x89,0x87};
