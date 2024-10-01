@@ -1,0 +1,355 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    10/01/2024  12:29:01  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\main.obj TO .\Objects\clock PRINT (.\Listings\clock.m51) RA
+>> MSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\clock (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0013H     UNIT         ?DT?MAIN
+            DATA    001BH     0002H     UNIT         _DATA_GROUP_
+            IDATA   001DH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     0092H     UNIT         ?PR?_HIENTHI?MAIN
+            CODE    00A0H     008CH     UNIT         ?C_C51STARTUP
+            CODE    012CH     0038H     UNIT         ?PR?ISR_TIMER?MAIN
+            CODE    0164H     0032H     UNIT         ?PR?_RTC_READ?MAIN
+            CODE    0196H     002DH     UNIT         ?C?LIB_CODE
+            CODE    01C3H     0027H     UNIT         ?PR?_RTC_WRITE?MAIN
+            CODE    01EAH     0023H     UNIT         ?PR?_DELAY_US?MAIN
+            CODE    020DH     0023H     UNIT         ?PR?SETRTC?MAIN
+            CODE    0230H     001CH     UNIT         ?C_INITSEG
+            CODE    024CH     0016H     UNIT         ?PR?GETRTC?MAIN
+            CODE    0262H     0016H     UNIT         ?PR?MAIN?MAIN
+            CODE    0278H     0010H     UNIT         ?PR?INTERRUPT_TIMER0?MAIN
+            CODE    0288H     000BH     UNIT         ?CO?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\clock (?C_STARTUP)
+
+
+SEGMENT                             DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?C_C51STARTUP                     -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                     -----    -----
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/01/2024  12:29:01  PAGE 2
+
+
+  +--> ?PR?SETRTC?MAIN
+  +--> ?PR?INTERRUPT_TIMER0?MAIN
+  +--> ?PR?GETRTC?MAIN
+  +--> ?PR?_HIENTHI?MAIN
+
+?PR?SETRTC?MAIN                   -----    -----
+  +--> ?PR?_RTC_WRITE?MAIN
+
+?PR?_RTC_WRITE?MAIN               -----    -----
+  +--> ?PR?_DELAY_US?MAIN
+
+?PR?GETRTC?MAIN                   -----    -----
+  +--> ?PR?_RTC_READ?MAIN
+
+?PR?_RTC_READ?MAIN                -----    -----
+  +--> ?PR?_DELAY_US?MAIN
+
+?PR?_HIENTHI?MAIN                 001BH    0002H
+  +--> ?CO?MAIN
+  +--> ?PR?_DELAY_US?MAIN
+
+*** NEW ROOT ***************************************************
+
+?PR?ISR_TIMER?MAIN                -----    -----
+  +--> ?PR?_DELAY_US?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\clock (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:00A0H         SEGMENT       ?C_C51STARTUP
+  I:001DH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:00A3H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:00A0H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/01/2024  12:29:01  PAGE 3
+
+
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:00A0H         LINE#         133
+  C:00A2H         LINE#         134
+  C:00A3H         LINE#         135
+  C:00A4H         LINE#         136
+  C:00A6H         LINE#         185
+  C:00A9H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  B:00B0H.5       PUBLIC        CE
+  C:024CH         PUBLIC        GetRTC
+  D:0008H         PUBLIC        WRITE
+  D:000EH         PUBLIC        Time
+  C:020DH         PUBLIC        SetRTC
+  B:00B0H.4       PUBLIC        IO
+  D:0014H         PUBLIC        READ
+  C:0262H         PUBLIC        main
+  B:00B0H.3       PUBLIC        SW
+  C:000EH         PUBLIC        _HienThi
+  B:00B0H.6       PUBLIC        SCLK
+  D:0089H         PUBLIC        TMOD
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  C:012CH         PUBLIC        ISR_TIMER
+  B:0088H.4       PUBLIC        TR0
+  C:01C3H         PUBLIC        _RTC_WRITE
+  C:0201H         PUBLIC        _delay_us
+  D:001AH         PUBLIC        CHEDO
+  C:0164H         PUBLIC        _RTC_READ
+  C:0278H         PUBLIC        Interrupt_Timer0
+  C:0288H         PUBLIC        Code7segCatot
+  C:01F2H         SYMBOL        L?0043
+  C:01FBH         SYMBOL        L?0044
+  C:01FDH         SYMBOL        L?0045
+  -------         PROC          L?0042
+  -------         ENDPROC       L?0042
+  C:01F2H         SYMBOL        L?0043
+  C:01FBH         SYMBOL        L?0044
+  C:01FDH         SYMBOL        L?0045
+  -------         PROC          _DELAY_US
+  D:0006H         SYMBOL        us_count
+  C:0201H         LINE#         49
+  C:0201H         LINE#         50
+  C:0201H         LINE#         51
+  C:0205H         LINE#         52
+  C:0205H         LINE#         53
+  C:020AH         LINE#         54
+  C:020CH         LINE#         55
+  -------         ENDPROC       _DELAY_US
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/01/2024  12:29:01  PAGE 4
+
+
+  -------         PROC          _RTC_READ
+  D:0003H         SYMBOL        add
+  -------         DO            
+  D:0005H         SYMBOL        dat
+  D:0004H         SYMBOL        temp
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:0164H         LINE#         58
+  C:0166H         LINE#         59
+  C:0166H         LINE#         61
+  C:0168H         LINE#         62
+  C:0168H         LINE#         63
+  C:016BH         LINE#         64
+  C:016DH         LINE#         65
+  C:016DH         LINE#         66
+  C:016DH         LINE#         67
+  C:016DH         LINE#         68
+  C:016DH         LINE#         69
+  C:016DH         LINE#         70
+  C:016DH         LINE#         71
+  C:0170H         LINE#         72
+  C:0174H         LINE#         73
+  C:0176H         LINE#         74
+  C:0176H         LINE#         75
+  C:017BH         LINE#         76
+  C:0187H         LINE#         77
+  C:0187H         LINE#         78
+  C:0187H         LINE#         79
+  C:0187H         LINE#         80
+  C:018AH         LINE#         81
+  C:018EH         LINE#         82
+  C:0191H         LINE#         83
+  C:0193H         LINE#         84
+  C:0195H         LINE#         85
+  -------         ENDPROC       _RTC_READ
+  -------         PROC          _RTC_WRITE
+  D:0003H         SYMBOL        add
+  D:0005H         SYMBOL        dat
+  -------         DO            
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:01C3H         LINE#         88
+  C:01C5H         LINE#         89
+  C:01C5H         LINE#         91
+  C:01C7H         LINE#         92
+  C:01C7H         LINE#         93
+  C:01CAH         LINE#         94
+  C:01CCH         LINE#         95
+  C:01CCH         LINE#         96
+  C:01CCH         LINE#         97
+  C:01CCH         LINE#         98
+  C:01CCH         LINE#         99
+  C:01CCH         LINE#         100
+  C:01CCH         LINE#         101
+  C:01CFH         LINE#         102
+  C:01D3H         LINE#         103
+  C:01D5H         LINE#         104
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/01/2024  12:29:01  PAGE 5
+
+
+  C:01D5H         LINE#         105
+  C:01D9H         LINE#         106
+  C:01DDH         LINE#         107
+  C:01DDH         LINE#         108
+  C:01DDH         LINE#         109
+  C:01DDH         LINE#         110
+  C:01E0H         LINE#         111
+  C:01E4H         LINE#         112
+  C:01E7H         LINE#         113
+  C:01E9H         LINE#         114
+  -------         ENDPROC       _RTC_WRITE
+  -------         PROC          SETRTC
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:020DH         LINE#         117
+  C:020DH         LINE#         118
+  C:020DH         LINE#         120
+  C:0214H         LINE#         121
+  C:0216H         LINE#         122
+  C:0216H         LINE#         123
+  C:0225H         LINE#         124
+  C:0229H         LINE#         125
+  -------         ENDPROC       SETRTC
+  -------         PROC          GETRTC
+  -------         DO            
+  D:0001H         SYMBOL        i
+  -------         ENDDO         
+  C:024CH         LINE#         129
+  C:024CH         LINE#         130
+  C:024CH         LINE#         132
+  C:024EH         LINE#         133
+  C:024EH         LINE#         134
+  C:025DH         LINE#         135
+  C:0261H         LINE#         136
+  -------         ENDPROC       GETRTC
+  -------         PROC          _HIENTHI
+  D:0001H         SYMBOL        Time
+  D:0005H         SYMBOL        chedo
+  -------         DO            
+  D:001BH         SYMBOL        i
+  D:001CH         SYMBOL        range
+  -------         ENDDO         
+  C:000EH         LINE#         139
+  C:000EH         LINE#         142
+  C:0011H         LINE#         143
+  C:0016H         LINE#         145
+  C:0019H         LINE#         147
+  C:0023H         LINE#         148
+  C:0023H         LINE#         149
+  C:002BH         LINE#         150
+  C:0044H         LINE#         151
+  C:004BH         LINE#         152
+  C:0054H         LINE#         153
+  C:0079H         LINE#         154
+  C:007EH         LINE#         155
+  C:0086H         LINE#         157
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/01/2024  12:29:01  PAGE 6
+
+
+  C:0089H         LINE#         158
+  C:008CH         LINE#         159
+  C:0093H         LINE#         160
+  C:0096H         LINE#         161
+  C:0099H         LINE#         162
+  -------         ENDPROC       _HIENTHI
+  -------         PROC          INTERRUPT_TIMER0
+  C:0278H         LINE#         166
+  C:0278H         LINE#         167
+  C:027BH         LINE#         168
+  C:027EH         LINE#         169
+  C:0281H         LINE#         170
+  C:0283H         LINE#         171
+  C:0285H         LINE#         172
+  C:0287H         LINE#         173
+  -------         ENDPROC       INTERRUPT_TIMER0
+  -------         PROC          ISR_TIMER
+  C:012CH         LINE#         176
+  C:0137H         LINE#         177
+  C:013AH         LINE#         178
+  C:013DH         LINE#         179
+  C:0144H         LINE#         180
+  C:0147H         LINE#         181
+  C:0149H         LINE#         182
+  C:0149H         LINE#         183
+  C:0152H         LINE#         184
+  C:0155H         LINE#         185
+  C:0155H         LINE#         186
+  C:0158H         LINE#         187
+  C:015BH         LINE#         188
+  C:015BH         LINE#         189
+  -------         ENDPROC       ISR_TIMER
+  -------         PROC          MAIN
+  C:0262H         LINE#         192
+  C:0262H         LINE#         193
+  C:0262H         LINE#         194
+  C:0265H         LINE#         195
+  C:0268H         LINE#         198
+  C:0268H         LINE#         199
+  C:0268H         LINE#         200
+  C:026BH         LINE#         201
+  C:0276H         LINE#         202
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0196H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+Program Size: data=30.0 xdata=0 code=651
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
